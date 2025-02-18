@@ -1,3 +1,4 @@
+import UserProfile from './components/UserProfile.jsx';
 import Header from './components/Header.jsx';
 import MainContent from './components/MainContent.jsx';
 import Footer from './components/Footer.jsx';
@@ -16,6 +17,10 @@ function App() {
     <div>
       <Header />
       <WelcomeMessage />
+      
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
+      <UserProfile name="Bob" age="30" bio="Enjoys coding and traveling" />
+      
       <MainContent />
       <Footer />
 
