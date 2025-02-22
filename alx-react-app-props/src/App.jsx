@@ -4,7 +4,7 @@ import Header from './components/Header.jsx';
 import MainContent from './components/MainContent.jsx';
 import Footer from './components/Footer.jsx';
 import WelcomeMessage from './components/WelcomeMessage.jsx';
-import ProfilePage from './components/ProfilePage.jsx'; // Import ProfilePage
+import UserProfile from './components/UserProfile.jsx'; // Updated import
 import UserContext from './UserContext.js'; // Import UserContext
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
@@ -25,8 +25,8 @@ function App() {
         <Header />
         <WelcomeMessage />
 
-        {/* ProfilePage now consumes userData via context */}
-        <ProfilePage />
+        {/* UserProfile now consumes userData via context */}
+        <UserProfile />
 
         <MainContent />
         <Footer />
