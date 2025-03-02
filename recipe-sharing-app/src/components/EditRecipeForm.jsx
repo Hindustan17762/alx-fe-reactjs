@@ -7,9 +7,13 @@ const EditRecipeForm = ({ recipe }) => {
   const [title, setTitle] = useState(recipe.title);
   const [description, setDescription] = useState(recipe.description);
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // ✅ Prevents the default form submission behavior
-    if (!title || !description) return alert('Please fill in all fields');
+  // Explicit form submit handler with event object
+  const handleSubmit = (event) => {
+    event.preventDefault(); // ✅ Ensures the form does not perform default action
+    if (!title || !description) {
+      alert('Please fill in all fields');
+      return;
+    }
     updateRecipe({ id: recipe.id, title, description });
   };
 
@@ -20,10 +24,12 @@ const EditRecipeForm = ({ recipe }) => {
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        placeholder="Recipe Title"
       />
       <textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}
+        placeholder="Recipe Description"
       />
       <button type="submit">Save Changes</button>
     </form>
