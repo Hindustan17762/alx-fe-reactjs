@@ -1,3 +1,4 @@
+// src/components/EditRecipeForm.jsx
 import { useState } from 'react';
 import { useRecipeStore } from '../store/recipeStore';
 
@@ -7,7 +8,8 @@ const EditRecipeForm = ({ recipe }) => {
   const [description, setDescription] = useState(recipe.description);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // ✅ Prevents the default form submission behavior
+    if (!title || !description) return alert('Please fill in all fields');
     updateRecipe({ id: recipe.id, title, description });
   };
 
